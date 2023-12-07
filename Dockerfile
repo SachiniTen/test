@@ -1,9 +1,9 @@
 # Dockerfile_user_activity_service
 FROM python:3.10-slim
 
-WORKDIR /app
+WORKDIR .
 
-COPY . .
+# COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # COPY . /app
