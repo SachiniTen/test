@@ -15,17 +15,17 @@ spec:
       containers:
       - name: user-activity-serviceq
         image: sachinitenn/github_user_activity_service:github_user_activity_service
-
+        command: ["python", "github_user_activity_service.py"]
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: user-activity-serviceq
-spec:
-  selector:
-    app: user-activity-serviceq
-  ports:
-    - protocol: "TCP"
-      port: 80
-      targetPort: 5000
-  type: LoadBalancer
+# #apiVersion: v1
+# #kind: Service
+# #metadata:
+#   name: user-activity-serviceq
+# spec:
+#   selector:
+#     app: user-activity-serviceq
+#   ports:
+#     - protocol: "TCP"
+#       port: 80
+#       targetPort: 5000
+#   type: LoadBalancer
