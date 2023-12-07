@@ -16,7 +16,7 @@ spec:
       - name: user-activity-servicei
         image: sachinitenn/github_user_activity_service:github_user_activity_service
         #command: ["python", "github_user_activity_service.py"]
-        command: ["ls"]
+        command: ["pwd"]
 ---
 apiVersion: v1
 kind: Service
