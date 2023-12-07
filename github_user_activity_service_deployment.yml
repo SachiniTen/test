@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: user-activity-deploymentq
+  name: user-activity-deploymenti
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: user-activity-serviceq
+      app: user-activity-servicei
   template:
     metadata:
       labels:
-        app: user-activity-serviceq
+        app: user-activity-servicei
     spec:
       containers:
-      - name: user-activity-serviceq
+      - name: user-activity-servicei
         image: sachinitenn/github_user_activity_service:github_user_activity_service
         command: ["python", "github_user_activity_service.py"]
 ---
-# #apiVersion: v1
-# #kind: Service
-# #metadata:
-#   name: user-activity-serviceq
-# spec:
-#   selector:
-#     app: user-activity-serviceq
-#   ports:
-#     - protocol: "TCP"
-#       port: 80
-#       targetPort: 5000
-#   type: LoadBalancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-activity-servicei
+spec:
+  selector:
+    app: user-activity-servicei
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer
