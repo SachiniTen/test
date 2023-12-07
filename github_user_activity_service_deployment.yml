@@ -15,8 +15,8 @@ spec:
       containers:
       - name: user-activity-servicei
         image: sachinitenn/github_user_activity_service:github_user_activity_service
-        #command: ["python", "github_user_activity_service.py"]
-        command: ["ls","github_user_activity_service"]
+        command: ["python", "github_user_activity_service/github_user_activity_service.py"]
+        #command: ["ls","github_user_activity_service"]
 ---
 apiVersion: v1
 kind: Service
