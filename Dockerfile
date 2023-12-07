@@ -6,6 +6,6 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY github_user_activity_service.py .
+COPY . /app
 
 CMD ["python", "github_user_activity_service.py"]
