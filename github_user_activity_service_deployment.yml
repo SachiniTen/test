@@ -1,29 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: user-activity-deploymentna
+  name: user-activity-deploymentm
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: user-activity-servicena
+      app: user-activity-servicem
   template:
     metadata:
       labels:
-        app: user-activity-servicena
+        app: user-activity-servicem
     spec:
       containers:
-      - name: user-activity-servicena
+      - name: user-activity-servicem
         image: sachinitenn/github_user_activity_service:github_user_activity_service
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: user-activity-servicena
+  name: user-activity-servicem
 spec:
   selector:
-    app: user-activity-servicena
+    app: user-activity-servicem
   ports:
     - protocol: "TCP"
       port: 80
