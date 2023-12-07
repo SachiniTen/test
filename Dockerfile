@@ -9,4 +9,4 @@ CMD ["ls"]
 RUN pip install --no-cache-dir -r requirements.txt
 
 #CMD ["python", "github_user_activity_service.py"]
-CMD python github_user_activity_service.py
+CMD python /app/github_user_activity_service.py
