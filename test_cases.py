@@ -1,5 +1,5 @@
-#import pytest
-#from unittest.mock import patch
+import pytest
+from unittest.mock import patch
 from github_user_activity_service import app  # Replace 'your_module' with the actual filename
 
 @pytest.fixture
