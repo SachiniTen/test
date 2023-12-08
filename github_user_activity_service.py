@@ -1,7 +1,7 @@
-import requests
-from urllib.parse import parse_qs, urlparse
-from flask import Flask, jsonify, request
-import mysql.connector
+#import requests
+#from urllib.parse import parse_qs, urlparse
+#from flask import Flask, jsonify, request
+#import mysql.connector
 
 app = Flask(__name__)
 
