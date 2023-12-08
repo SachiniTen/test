@@ -14,12 +14,12 @@ def test_get_github_commits_count_main(client):
         mock_get.return_value.json.return_value = [{'sha': '123', 'commit': {'message': 'Test commit'}}]
 
         response = client.get('/get_github_commits_count_main?owner_username=test&repository_name=test&developer_username=test')
-
+        print("-----------Commit test-----------")
         assert response.status_code == 200
 
         assert b'Repository commits counnnnnnt' in response.data
         assert b'User commits count' in response.data
-        print("-----------Commit test-----------")
+        
 
 
 def test_get_github_pull_requests(client):
@@ -28,11 +28,11 @@ def test_get_github_pull_requests(client):
         mock_get.return_value.json.return_value = [{'number': 1}, {'number': 2}]
 
         response = client.get('/get_github_pull_requests?owner_username=test&repository=test&developer_username=test')
-
+        print("-----------Pull test-----------")
         assert response.status_code == 200
         assert b'Assigned Pull Requests' in response.data
         assert b'Total Pull Requests' in response.data
-         print("-----------Pull test-----------")
+       
 
 def test_get_github_issues(client):
     with patch('github_user_activity_service.requests.get') as mock_get:  # Replace 'your_module' with the actual filename
@@ -40,7 +40,7 @@ def test_get_github_issues(client):
         mock_get.return_value.json.return_value = [{'state': 'open'}, {'state': 'closed'}]
 
         response = client.get('/get_github_issues?owner_username=test&repository=test&developer_username=test')
-
+        print("-----------Issues test-----------")
         assert response.status_code == 200
         assert b'Assigned Issues' in response.data
         assert b'Total Issues' in response.data
@@ -48,4 +48,4 @@ def test_get_github_issues(client):
         assert b'Repo Closed Issues Count' in response.data
         assert b'Developer Open Issues Count' in response.data
         assert b'Developer Closed Issues Count' in response.data
-        print("-----------Issues test-----------")
+       
