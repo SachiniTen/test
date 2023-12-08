@@ -19,6 +19,7 @@ def test_get_github_commits_count_main(client):
 
         assert b'Repository commits counnnnnnt' in response.data
         assert b'User commits count' in response.data
+        print("-----------Commit test-----------")
 
 
 def test_get_github_pull_requests(client):
@@ -31,6 +32,7 @@ def test_get_github_pull_requests(client):
         assert response.status_code == 200
         assert b'Assigned Pull Requests' in response.data
         assert b'Total Pull Requests' in response.data
+         print("-----------Pull test-----------")
 
 def test_get_github_issues(client):
     with patch('github_user_activity_service.requests.get') as mock_get:  # Replace 'your_module' with the actual filename
@@ -46,3 +48,4 @@ def test_get_github_issues(client):
         assert b'Repo Closed Issues Count' in response.data
         assert b'Developer Open Issues Count' in response.data
         assert b'Developer Closed Issues Count' in response.data
+        print("-----------Issues test-----------")
